@@ -1,0 +1,310 @@
+/*MOBILE FIRST*/
+html{
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+.site-body{
+    padding: 15px 15px 15px 0px;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 1;
+    transition: 1s ease;
+}
+
+#overlay.active{
+    display: block;
+}
+
+/*HEADER*/
+
+.desktopHeader{
+    display: none;
+}
+
+#logo {
+    margin-left: none;
+}
+
+/*MOBILE MENU*/
+.off-screen-menu{
+    display: none;
+    z-index: 2;
+    position: fixed;
+    background-color: hsl(36, 100%, 99%);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    animation: fadeIn ease .3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+/*ADD DISPLAY: BLOCK; TO .off-screen-menu WHEN 
+#hamburgerClosed is pressed*/
+
+.off-screen-menu.active{
+    display: block;
+}
+
+#hamburgerOpen{
+    float: right;
+    padding: 10px;
+}
+
+.off-screen-menu ul{
+    margin-top: 130px;
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+.off-screen-menu li{
+    list-style: none;
+    padding-top: 30px;
+
+}
+
+.hamburger{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#hamburgerClosed{
+    margin-left: auto;
+}
+
+/*HERO SECTION*/
+
+#hero{
+    margin-bottom: 75px;
+}
+
+#mobileHeroImg{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#desktopHeroImg {
+    display: none;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: hsl(240, 100%, 5%);
+    line-height: 50px;
+    margin: 20px 0 20px 0;
+}
+
+p{
+    font-size: 15px;
+    line-height: 25px;
+    color:hsl(236, 13%, 42%);
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+#readMore{
+    background-color: hsl(5, 85%, 63%);
+    border-style: none;
+    padding: 18px 22px 18px 22px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/*ASIDE SECTION*/
+
+aside{
+    background-color: hsl(240, 100%, 5%);
+    padding: 10px 20px 10px 20px;
+}
+
+h2{
+    font-size: 40px;
+    color: hsl(35, 77%, 62%);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+h3{
+    font-size: 20px;
+    color: hsl(36, 100%, 99%);
+    margin-bottom: 10px;
+}
+
+.asideArticle{
+    border-bottom: 0.5px solid hsl(36, 100%, 99%);
+}
+
+.asideArticle:last-child{
+    border-bottom: none;
+}
+
+/*FOOTER*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.footerArticle{
+    display: flex;
+    flex-direction: row;
+}
+
+footer img{
+    height: 160px;
+    width: auto;
+    margin: 0 20px 20px 0;
+}
+
+.footerArticleNumber{
+    color: hsl(5, 85%, 63%);
+    font-weight: 700;
+    font-size: 35px; 
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+h4{
+    margin: 20px 0 10px 0;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        padding: 15px 150px 15px 150px;
+    }
+
+    .mobileHeader {
+        display: none;
+    }
+
+    .desktopHeader {
+        display: flex;
+        flex-direction: row;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-left: auto;
+        font-weight: 400;
+    }
+
+    li {
+        padding-left: 40px;
+    }
+
+    li:hover {
+        color: hsl(5, 85%, 63%);
+        cursor: grab;
+    }
+
+    #desktopFlex {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #hero {
+        width: 65%;
+        padding-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .heroFlex{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #mobileHeroImg {
+        display: none;
+    }
+
+    #desktopHeroImg {
+        display: block;
+        object-fit: contain;
+        object-position: top;
+        height: 300px;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+
+    #readMore:hover {
+        background-color: hsl(240, 100%, 5%);
+        color: white;
+        cursor: grab;
+    }
+
+    aside {
+        width: 30%;
+    }
+
+    h2 {
+        margin-bottom: 0px;
+    }
+
+    .asideArticle{
+        padding: 10px 0px 10px 0px;
+    }
+
+    h3:hover {
+        color: hsl(35, 77%, 62%);
+        cursor: grab;
+    }
+
+    h4:hover {
+        color: hsl(5, 85%, 63%);
+        cursor: grab;
+    }
+
+    .footerArticle {
+        align-self: flex-end;
+    }
+
+    h1 {
+        width: 50%;
+        height: 50%;
+        padding-right: 38px;
+    }
+
+    .headerArticle {
+        width: 50%;
+    }
+    
+    footer {
+        display: flex;
+        flex-direction: row;
+    }
+}
